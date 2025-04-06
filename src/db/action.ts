@@ -1,7 +1,10 @@
 "use server";
 
+import { signIn  , signOut} from "../../auth";
+
 import Airtable from "airtable";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const submitForm = async (data: any) => {
 	const { name, email, message, phone } = data;
 
@@ -10,7 +13,7 @@ export const submitForm = async (data: any) => {
 			"app4ipunYjec8D9if"
 		);
 
-		const response = await base("Enquiry").create([
+		 await base("Enquiry").create([
 			{
 				fields: {
 					"Full Name": name, // Ensure exact match with Airtable field names
@@ -26,6 +29,7 @@ export const submitForm = async (data: any) => {
 			message: "Message received successfully. We'll get back to you soon!",
 		};
 	} catch (error) {
+		console.error("Error submitting form:", error);
 		return {
 			success: false,
 			message: "Failed to submit form. Please try again later.",
@@ -33,3 +37,14 @@ export const submitForm = async (data: any) => {
 		};
 	}
 };
+
+export const SignIn = async (data: FormData) => {
+	const actions = data.get("action") as string | undefined;
+
+	await signIn(actions, { redirectTo: "/blog" });
+};
+
+export const signOutFun =  async () =>{
+    await signOut({redirectTo : "/"})
+}
+

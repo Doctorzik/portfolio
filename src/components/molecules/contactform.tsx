@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -31,11 +30,12 @@ const formSchema = z.object({
         message: "Please input a valid Email address",
     }),
     message: z.string().trim().min(5, {
-        message: "Your message must contain at leaset five character long",
+        message: "Your message must contain at least five characters.",
     }),
 });
 
-export default function ContactForm({ handleSubmit, messag }: any) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function ContactForm({ handleSubmit }:any) {
     const [state, setState] = useState<boolean>(false);
     const [message, setMessage] = useState("");
 
@@ -49,9 +49,6 @@ export default function ContactForm({ handleSubmit, messag }: any) {
     });
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values);
         const { success, message } = await handleSubmit(values);
         setState(success);
         setMessage(message);
@@ -62,62 +59,89 @@ export default function ContactForm({ handleSubmit, messag }: any) {
     }
 
     return (
-        <>
-            {state ? <div>{message}</div> : <div>{message}</div>}
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-900 to-black p-6">
+            <div className="w-full max-w-lg bg-gray-900 text-white p-8 rounded-3xl shadow-xl">
+                <h2 className="text-3xl font-bold text-center text-green-400 mb-6">
+                    Contact Me
+                </h2>
 
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                    <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Name</FormLabel>
-                                <FormControl>
-                                    <Input placeholder="Enter your name" {...field} />
-                                </FormControl>
-                                <FormDescription>Enter your full name</FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Email</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        type="email"
-                                        placeholder="Enter your email"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormDescription>Enter your your email address</FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Message</FormLabel>
-                                <FormControl>
-                                    <Textarea placeholder="Message" {...field} />
-                                </FormControl>
-                                <FormDescription>
-                                    Please type the message you wish to let me know.
-                                </FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <Button type="submit" className="align-center block   mx-auto w-1/2">Submit</Button>
-                </form>
-            </Form>
-        </>
+                {message && (
+                    <div
+                        className={`text-center p-2 rounded-md ${
+                            state ? "bg-green-500" : "bg-red-500"
+                        } text-white mb-4`}
+                    >
+                        {message}
+                    </div>
+                )}
+
+                <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                        <FormField
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="text-green-300">Name</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            className="bg-gray-800 text-white border border-gray-700 focus:border-green-400 focus:ring-1 focus:ring-green-500 rounded-lg"
+                                            placeholder="Enter your name"
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+
+                        <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="text-green-300">Email</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            type="email"
+                                            className="bg-gray-800 text-white border border-gray-700 focus:border-green-400 focus:ring-1 focus:ring-green-500 rounded-lg"
+                                            placeholder="Enter your email"
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+
+                        <FormField
+                            control={form.control}
+                            name="message"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="text-green-300">Message</FormLabel>
+                                    <FormControl>
+                                        <Textarea
+                                            className="bg-gray-800 text-white border border-gray-700 focus:border-green-400 focus:ring-1 focus:ring-green-500 rounded-lg"
+                                            placeholder="Type your message..."
+                                            rows={4}
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+
+                        <Button
+                            type="submit"
+                            className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-xl shadow-md transition-all duration-300 transform hover:scale-105"
+                        >
+                            Send Message
+                        </Button>
+                    </form>
+                </Form>
+            </div>
+        </div>
     );
 }
