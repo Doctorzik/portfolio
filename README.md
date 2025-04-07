@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Overview
+ [Applink](https://zik.netlify.app)
 
-## Getting Started
+ 
+🌐 Web App Description 
+This is a zik portfolio web application built using Next.js and NextAuth.js, which enables users to authenticate via GitHub and Google. The app showcases project and highlight my skills. The app is hosted on Netlify. 
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+I wrote this software to be able to centralized my past and future projects. Showcasing them to potential employers and clients.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+[Software Demo Video](http://youtube.link.goes.here)
 
-## Learn More
+# Web Pages
 
-To learn more about Next.js, take a look at the following resources:
+The site home page is divided in projects, skills section.
+Other pages include Contact, About and Blog page which is acessed on after login.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dynamic projects page also display information 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Development Environment
 
-## Deploy on Vercel
+ To build and test this application, I used the following tools:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Visual Studio Code – For writing and managing the codebase.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Node.js & npm – For running the server and managing dependencies.
+
+* Git & GitHub – For version control and project hosting.
+
+* Netlify – For deploying the frontend and managing environment variables.
+
+
+This project was developed using:
+
+* JavaScript (ES6+) – The primary programming language used for both frontend and backend.
+
+* Next.js – A full-stack React framework used to build the frontend and API routes.
+
+* React – For building reusable and interactive UI components.
+
+* NextAuth.js – Library used to manage authentication, including integration with Google OAuth.
+
+* Tailwind CSS – A utility-first CSS framework for styling the user interface.
+
+* dotenv – For managing environment variables in development.
+
+* Vercel or Netlify – For deploying and hosting the app online.
+
+# Useful Websites
+
+* [Cloundinary](https://cloudinary.com/)
+* [Tanstack query](https://tanstack.com/query)
+
+# Future Work
+
+
+* Complete the Footer section and About Section
+* Create routes to update projects automatically instead of manually.
+* Complete the Blog sections and user roles.
+* Create a separate backend for api services.

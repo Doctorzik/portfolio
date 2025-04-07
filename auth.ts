@@ -21,6 +21,17 @@ export const {
 				},
 			},
 		}),
+		Github({
+			clientId: process.env.AUTH_GITHUB_ID!,
+			clientSecret: process.env.AUTH_GITHUB_SECRET!,
+			// Since i wont be persisting the user data in a data base, I should add an authoraztion  parameters
+			authorization: {
+				params: {
+					prompt: "consent",
+					access_type: "offline",
+					response_type: "code",
+				},
+			},
+		}),
 	],
-
 });
