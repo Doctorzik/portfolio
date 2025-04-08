@@ -16,7 +16,7 @@ function ProjectPage() {
     <>
       <div className="max-w-5xl mx-auto m-20 p-6">
         <h1 className="text-3xl font-bold mb-2">{pageProject?.name}</h1>
-        <p className="text-gray-600 mb-4">{pageProject?.description}</p>
+        <p className="mb-4">{pageProject?.description}</p>
         <div className="flex gap-4 mb-6">
           {pageProject?.links?.map((link, i) => (
             <a
