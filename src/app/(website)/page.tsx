@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import SkillsSection from "@/components/molecules/skills";
 import { projects } from "../../lib/utils";
-import Head from 'next/head';
 export default function Home() {
 	return (
 
