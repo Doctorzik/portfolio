@@ -19,6 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ezekiel Portfolio Website",
   description: "Jeremiah Ezekiel's Portfolio Website. Highlighting  skills and projects.",
+  verification: {
+    google: "7BwZ3vDqesxdskT4V9ISSrmhE4lTxrLB_NjuyeDUb_g",
+  },
+
+
 };
 
 export default function RootLayout({
@@ -28,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     
+
       <body
         className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
       >
