@@ -5,6 +5,7 @@ import Navbar from "@/components/molecules/navbar";
 import Footer from "@/components/molecules/footer";
 
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+     
       <body
         className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
       >

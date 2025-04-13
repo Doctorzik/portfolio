@@ -4,8 +4,16 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import SkillsSection from "@/components/molecules/skills";
 import { projects } from "../../lib/utils";
+import Head from 'next/head';
 export default function Home() {
-	return (
+	return (<>
+		<Head>
+			<meta
+				name="google-site-verification"
+				content="7BwZ3vDqesxdskT4V9ISSrmhE4lTxrLB_NjuyeDUb_g"
+			/>
+			<title>Ezekiel Portfolio</title>
+		</Head>
 		<main className=" m-4 ">
 			<div className="flex flex-col justify-between  align-center lg:flex-row-reverse  gap-[20px] h-[100%]">
 				<div className="w-full ">
@@ -68,5 +76,6 @@ export default function Home() {
 				</div>
 			</section>
 		</main>
+	</>
 	);
 }
