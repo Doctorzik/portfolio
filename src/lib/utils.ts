@@ -40,7 +40,7 @@ export const projects = [
 			},
 			{
 				name: "Live Demo",
-				link: "",
+				link: "https://www.nublite.com/",
 			},
 		],
 		images: [
