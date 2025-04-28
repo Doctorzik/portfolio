@@ -1,10 +1,10 @@
 
-import { SignIn } from "@/db/action";
+
 
 const Login = async () => {
   return (
     <>
-      <form action={SignIn}>
+      <form >
         <button
           type="submit" name="action" value="google"
           className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-xl shadow-md transition-all duration-300 transform hover:scale-105"

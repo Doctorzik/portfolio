@@ -38,7 +38,7 @@ export default function Navbar() {
 
   // Function to handle Blog navigation
   const handleBlogClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!isAuthenticated) {
+    if (isAuthenticated) {
       e.preventDefault(); // Prevent navigation
       router.push("/login"); // Redirect to login
     }
@@ -63,7 +63,7 @@ export default function Navbar() {
           ))}
           {/* Blog Link (Protected) */}
           <li className="hover:bg-gray-700">
-            <Link href={isAuthenticated ? "/blog" : "/login"} onClick={handleBlogClick}>
+            <Link href={isAuthenticated ? "/blog" : "/blog"} onClick={handleBlogClick}>
               Blog
             </Link>
           </li>

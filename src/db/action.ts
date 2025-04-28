@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn  , signOut} from "../../auth";
+
 
 import Airtable from "airtable";
 
@@ -38,13 +38,5 @@ export const submitForm = async (data: any) => {
 	}
 };
 
-export const SignIn = async (data: FormData) => {
-	const actions = data.get("action") as string | undefined;
 
-	await signIn(actions, { redirectTo: "/blog" });
-};
-
-export const signOutFun =  async () =>{
-    await signOut({redirectTo : "/"})
-}
 
