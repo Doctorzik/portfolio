@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "@/components/molecules/navbar";
 import Footer from "@/components/molecules/footer";
 
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
   verification: {
     google: "7BwZ3vDqesxdskT4V9ISSrmhE4lTxrLB_NjuyeDUb_g",
   },
+   
 
 
 };
@@ -32,18 +34,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <ClerkProvider>
+      <html lang="en">
 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
-      >
-        <Navbar />
+        <body
+          className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
+        >
+          <Navbar />
 
-        {children}
+          {children}
 
 
-        <Footer />
-      </body>
-    </html>
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

@@ -1,16 +1,12 @@
+import { clerkMiddleware } from "@clerk/nextjs/server";
 
-
-import { NextRequest, NextResponse } from "next/server";
-
-export async function middleware(req: NextRequest) {
-    const hasSession = req.cookies.has("next-auth.session-token");
-    if (req.nextUrl.pathname.startsWith("/blog") && !hasSession) {
-        return NextResponse.redirect(new URL("/login", req.url));
-    }
-
-	return NextResponse.next();
-}
+export default clerkMiddleware();
 
 export const config = {
-	matcher: ["blog/:path*"], // Apply to /blog and all subroutes
+	matcher: [
+		// Skip Next.js internals and all static files, unless found in search params
+		"/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+		// Always run for API routes
+		"/(api|trpc)(.*)",
+	],
 };

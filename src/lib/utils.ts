@@ -15,7 +15,7 @@ export const projects = [
 		category: "Web Development",
 		status: "Completed",
 		start_date: "2025-03-01",
-		end_date: "2025-05-01",
+		end_date: "2025-04-01",
 		technologies: ["React", "Next.js", "Tailwind CSS", "Node.js"],
 		milestones: [
 			{
@@ -26,7 +26,7 @@ export const projects = [
 			{
 				title: "Front-end Development",
 				deadline: "2025-04-01",
-				status: "In Progress",
+				status: "Completed",
 			},
 			{
 				title: "Back-end Integration",
@@ -193,6 +193,99 @@ export const projects = [
 			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1743959055/users-api-1_wabpjp.png",
 			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1743959054/users-api-2_nomcpg.png",
 			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1743959054/users-api-3_bpged2.png",
+		],
+	},
+	{
+		id: 5,
+		name: "Employee Directory",
+		description:
+			"A web application that allows users to view and manage employee information.",
+		category: "Web Application",
+		status: "Completed",
+		start_date: "2025-01-01",
+		end_date: "2025-02-01",
+		technologies: ["React", "Node.js", "Prisma ORM", "Postgres Database"],
+		milestones: [
+			{
+				title: "UI/UX Design",
+				deadline: "2025-04-2",
+				status: "Completed",
+			},
+			{
+				title: "Front-end Development",
+				deadline: "2025-04-20",
+				status: "Completed",
+			},
+			{
+				title: "Back-end Development",
+				deadline: "2025-01-25",
+				status: "Completed",
+			},
+			{
+				title: "Deployment",
+				deadline: "2025-01-30",
+				status: "Completed",
+			},
+		],
+		links: [
+			{
+				name: "GitHub Repository",
+				link: "https://github.com/Doctorzik/saintajayi",
+			},
+			{
+				name: "Live Demo",
+				link: "",
+			},
+		],
+		images: [
+			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1743959055/employee-directory-1_ayqv4d.png",
+			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1743959055/employee-directory-2_ayqv4d.png",
+			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1743959055/employee-directory-3_ayqv4d.png",
+			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1743959055/employee-directory-4_ayqv4d.png",
+		],
+	},
+	{
+		id: 6,
+		name: "Countries Information",
+		description:
+			"A web application that provides information about countries, including population, area, and languages spoken.",
+		category: "Web Application",
+		status: "Completed",
+		start_date: "2025-04-21",
+		end_date: "2025-04-28",
+		technologies: ["React", "Next.js", "Tailwind CSS", "REST API"],
+		milestones: [
+			{
+				title: "Design UI",
+				deadline: "2025-04-21",
+				status: "Completed",
+			},
+			{
+				title: "Frontend",
+				deadline: "2025-04-22",
+				status: "In Progress",
+			},
+			{
+				title: "Deployment",
+				deadline: "2025-04-25",
+				status: "In Progress",
+			},
+		],
+		links: [
+			{
+				name: "GitHub Repository",
+				link: "https://github.com/Doctorzik/countries",
+			},
+			{
+				name: "Live Demo",
+				link: "https://countries-lac-mu.vercel.app/",
+			},
+		],
+		images: [
+			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1745873337/localhost_3000__dark_desktop_aov8rh.png",
+			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1745873337/localhost_3000__light_mobile_me43io.png",
+			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1745873337/localhost_3000__light_mobile_me43io.png",
+			"https://res.cloudinary.com/dj57rvnay/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1745873337/localhost_3000__dark_mobile_sq8n9m.png",
 		],
 	},
 ];
